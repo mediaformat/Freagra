@@ -134,7 +134,7 @@ const PostView = ({post_id}) => {
 	const commentsQuery = {
 		post: post_id,
 		orderby : 'date',
-		order : 'desc',
+		order : 'asc',
 	}
 	const {records: comments, hasResolved: commentsLoaded} = useEntityRecords('root', 'comment', commentsQuery)
 
