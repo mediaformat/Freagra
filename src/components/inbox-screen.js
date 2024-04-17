@@ -3,7 +3,7 @@ import { humanTimeDiff } from '@wordpress/date';
 import { useState, createContext, useContext } from '@wordpress/element';
 import { store as coreDataStore, useEntityRecords, useEntityRecord, saveEntityRecord } from '@wordpress/core-data';
 import { Panel, PanelBody,
-	Card, CardMedia,
+	Card, CardBody, CardMedia,
 	TextareaControl, Spinner, Button,
 	__experimentalText as Text,
 } from '@wordpress/components';
