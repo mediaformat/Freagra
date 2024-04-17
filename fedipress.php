@@ -14,6 +14,16 @@
 
 namespace FediPress;
 
+/**
+ * @param $links
+ *
+ * @return array
+ */
+function fedipress_settings_link( $links ) {
+  $links[] = '<a href="' . admin_url( 'options-general.php?page=fedipress' ) . '">' . __( 'Settings', 'murmurations-node' ) . '</a>';
+  return $links;
+}
+\add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), __NAMESPACE__ . '\fedipress_settings_link' );
 
 /**
  * register_plugin_settings_page
