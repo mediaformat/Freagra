@@ -52,3 +52,41 @@ function render_settings_page() {
 	<?php
 }
 
+/**
+ * enqueue_settings_script
+ *
+ * Enqueue scripts for the settings page
+ *
+ * @param  mixed $hook
+ * @return void
+ */
+function enqueue_settings_script( $hook ) {
+	$asset_file_page = plugin_dir_path( __FILE__ ) . 'build/index.asset.php';
+	$asset_file = include plugin_dir_path( __FILE__ ) . 'build/index.asset.php';
+	if ( file_exists( $asset_file_page ) && 'settings_page_fedipress' === $hook ) {
+		$assets = require $asset_file_page;
+		wp_enqueue_media();
+		wp_register_script(
+			'fedipress',
+			plugins_url( 'build/index.js', __FILE__ ),
+			$assets['dependencies'],
+			$assets['version'],
+			true
+		);
+		wp_enqueue_script( 'fedipress' );
+
+		foreach ( $assets['dependencies'] as $style ) {
+			wp_enqueue_style( $style );
+		}
+
+		$dir = __DIR__;
+		$admin_css = 'build/index.css';
+		wp_enqueue_style(
+			'fedipress',
+			plugins_url( $admin_css, __FILE__ ),
+			['wp-components'],
+			filemtime( "$dir/$admin_css" )
+		);
+	}
+};
+add_action( 'admin_enqueue_scripts',  __NAMESPACE__ . '\enqueue_settings_script' );
