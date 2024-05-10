@@ -10,7 +10,7 @@ import HomeScreen from './components/inbox-screen';
 import './admin.scss';
 
 // Render the app to the screen.
-const container = document.getElementById('fedipress');
+const container = document.getElementById('freagra');
 const root = createRoot(container);
 window.addEventListener(
     'load',

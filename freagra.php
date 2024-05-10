@@ -1,29 +1,29 @@
 <?php
 /**
- * Plugin Name:     FediPress
- * Plugin URI:      https://codeberg.org/OpenForFuture/FediPress
- * Description:     An ActivityPub chat PWA for WordPress.
+ * Plugin Name:     Freagra
+ * Plugin URI:      https://github.com/mediaformat/Freagra
+ * Description:     An ActivityPub client for WordPress.
  * Author:          MediaFormat
  * Author URI:      https://mediaformat.org
- * Text Domain:     fedipress
+ * Text Domain:     freagra
  * Domain Path:     /languages
  * Version:         0.1.0
  *
- * @package         FediPress
+ * @package         Freagra
  */
 
-namespace FediPress;
+namespace Freagra;
 
 /**
  * @param $links
  *
  * @return array
  */
-function fedipress_settings_link( $links ) {
-  $links[] = '<a href="' . admin_url( 'options-general.php?page=fedipress' ) . '">' . __( 'Settings', 'murmurations-node' ) . '</a>';
+function freagra_settings_link( $links ) {
+  $links[] = "<a href='" . admin_url( 'options-general.php?page=freagra' ) . "'>" . __( 'Settings', 'murmurations-node' ) . "</a>";
   return $links;
 }
-\add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), __NAMESPACE__ . '\fedipress_settings_link' );
+\add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), __NAMESPACE__ . '\freagra_settings_link' );
 
 /**
  * register_plugin_settings_page
@@ -32,10 +32,10 @@ function fedipress_settings_link( $links ) {
  */
 function register_plugin_settings_page() {
 	$page_hook_suffix = \add_options_page(
-		__( 'FediPress', 'fedipress' ),
-		__( 'FediPress', 'fedipress' ),
+		__( 'Freagra', 'freagra' ),
+		__( 'Freagra', 'freagra' ),
 		'manage_options',
-		'fedipress',
+		'freagra',
 		__NAMESPACE__ . '\render_settings_page',
 	);
 }
@@ -46,8 +46,8 @@ function register_plugin_settings_page() {
  */
 function render_settings_page() {
 	?>
-	<div id="fedipress">
-		<?php esc_html_e( 'Requires JavaScript', 'fedipress' ); ?>
+	<div id="freagra">
+		<?php esc_html_e( 'Requires JavaScript', 'freagra' ); ?>
 	</div>
 	<?php
 }
@@ -63,17 +63,17 @@ function render_settings_page() {
 function enqueue_settings_script( $hook ) {
 	$asset_file_page = plugin_dir_path( __FILE__ ) . 'build/index.asset.php';
 	$asset_file = include plugin_dir_path( __FILE__ ) . 'build/index.asset.php';
-	if ( file_exists( $asset_file_page ) && 'settings_page_fedipress' === $hook ) {
+	if ( file_exists( $asset_file_page ) && 'settings_page_freagra' === $hook ) {
 		$assets = require $asset_file_page;
 		wp_enqueue_media();
 		wp_register_script(
-			'fedipress',
+			'freagra',
 			plugins_url( 'build/index.js', __FILE__ ),
 			$assets['dependencies'],
 			$assets['version'],
 			true
 		);
-		wp_enqueue_script( 'fedipress' );
+		wp_enqueue_script( 'freagra' );
 
 		foreach ( $assets['dependencies'] as $style ) {
 			wp_enqueue_style( $style );
@@ -82,7 +82,7 @@ function enqueue_settings_script( $hook ) {
 		$dir = __DIR__;
 		$admin_css = 'build/index.css';
 		wp_enqueue_style(
-			'fedipress',
+			'freagra',
 			plugins_url( $admin_css, __FILE__ ),
 			['wp-components'],
 			filemtime( "$dir/$admin_css" )

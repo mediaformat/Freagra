@@ -1,4 +1,4 @@
-# FediPress #
+# Freagra #
 **Contributors:** [mediaformat](https://profiles.wordpress.org/mediaformat/)
 **Tags:** activitypub, fediverse
 **Requires at least:** 5.0

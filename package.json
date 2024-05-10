@@ -1,5 +1,5 @@
 {
-  "name": "fedipress",
+  "name": "freagra",
   "version": "0.1.0",
   "main": "build/index.js",
   "description": "An ActivityPub chat PWA for WordPress.",
@@ -11,6 +11,7 @@
     }
   ],
   "devDependencies": {
+    "@wordpress/blocks": "^12.33.0",
     "@wordpress/env": "^9.7.0",
     "@wordpress/scripts": "^27.6.0",
     "grunt": "^1.6.1",
@@ -23,7 +24,8 @@
     "@wordpress/core-data": "^6.32.0",
     "@wordpress/data": "^9.25.0",
     "@wordpress/element": "^5.32.0",
-    "@wordpress/i18n": "^4.55.0"
+    "@wordpress/i18n": "^4.55.0",
+    "@wordpress/server-side-render": "^4.33.0"
   },
   "scripts": {
     "start": "wp-scripts start",
