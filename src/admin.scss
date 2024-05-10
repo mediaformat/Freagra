@@ -1,5 +1,23 @@
-/* fedipress */
+/* freagra */
 
-#fedipress {
+#freagra {
+	.messages-nav > ul {
+		max-width: 350px;
+		width: 100%;
+	}
+	.components-toolbar-group {}
+	.components-toolbar-group button.active svg {
+		color: purple;
+	}
+	.message-preview .view-message {
 
+	}
+	.message-preview .view-message::after {
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		content: ' ';
+	}
 }
