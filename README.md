@@ -1,8 +1,8 @@
 # Freagra
 
-Author: MediaFormat
-Tags: activitypub, fediverse
-License: GPLv2 or later
+Author: MediaFormat  
+Tags: activitypub, fediverse  
+License: GPLv2 or later  
 
 ## Description ##
 
