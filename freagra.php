@@ -2,7 +2,7 @@
 /**
  * Plugin Name:     Freagra
  * Plugin URI:      https://github.com/mediaformat/Freagra
- * Description:     An ActivityPub client for WordPress.
+ * Description:     A Social client for WordPress-ActivityPub.
  * Author:          MediaFormat
  * Author URI:      https://mediaformat.org
  * Text Domain:     freagra
