@@ -1,17 +1,14 @@
-# Freagra #
-**Contributors:** [mediaformat](https://profiles.wordpress.org/mediaformat/)
-**Tags:** activitypub, fediverse
-**Requires at least:** 5.0
-**Tested up to:** 6.2.2
-**Stable tag:** trunk
-**Requires PHP:** 5.6
-**License:** GPLv2 or later
-**License URI:** https://www.gnu.org/licenses/gpl-2.0.html
+# Freagra
 
-An ActivityPub chat PWA for WordPress.
+Author: MediaFormat
+Tags: activitypub, fediverse
+License: GPLv2 or later
 
 ## Description ##
 
+A Social client for WordPress-ActivityPub.
+
+### Features
 
 
 ## Build steps ##
